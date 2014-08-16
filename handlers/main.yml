@@ -1,0 +1,3 @@
+---
+- name: Start NTP
+  service: name=ntp state=started enabled=yes

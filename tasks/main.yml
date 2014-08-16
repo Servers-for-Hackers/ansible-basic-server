@@ -1,0 +1,14 @@
+---
+- name: Install Server Basics
+  apt: pkg={{ item }} state=installed update_cache=true
+  with_items:
+    - ntp
+    - wget
+    - curl
+    - vim
+    - ack-grep
+    - git
+    - unzip
+    - htop
+  notify:
+    - Start NTP
