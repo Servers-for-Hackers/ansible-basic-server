@@ -10,5 +10,6 @@
     - git
     - unzip
     - htop
+    - tmux
   notify:
     - Start NTP
