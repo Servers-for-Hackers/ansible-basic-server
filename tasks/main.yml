@@ -2,6 +2,14 @@
 - name: Perform Safe Upgrade
   apt: upgrade=safe update_cache=yes
 
+- name: Add Periodic Configuration
+  file: src=10periodic dest=/etc/apt/apt.conf.d/10periodic owner=root group=root
+
+- name: Add Unattended Upgrade Configuration
+  file: src=50unattended-upgrades dest=/etc/apt/apt.conf.d/50unattended-upgrades owner=root group=root
+  notify:
+   - Restart Unattended Upgrades
+
 - name: Install Server Basics
   apt: pkg={{ item }} state=installed update_cache=true
   with_items:
