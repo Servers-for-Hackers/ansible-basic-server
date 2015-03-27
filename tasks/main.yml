@@ -5,7 +5,9 @@
 - name: Install Server Basics
   apt: pkg={{ item }} state=installed update_cache=true
   with_items:
+    - acl
     - unattended-upgrades
+    - policykit-1
     - ntp
     - wget
     - curl
