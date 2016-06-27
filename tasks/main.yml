@@ -1,6 +1,6 @@
 ---
 - name: Perform Safe Upgrade
-  apt: upgrade=safe update_cache=yes
+  apt: upgrade=dist update_cache=yes
 
 - name: Install Server Basics
   apt: pkg={{ item }} state=installed update_cache=true
